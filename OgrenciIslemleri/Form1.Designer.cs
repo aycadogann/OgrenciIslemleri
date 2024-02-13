@@ -38,12 +38,12 @@ namespace OgrenciIslemleri
             this.label7 = new System.Windows.Forms.Label();
             this.rbtn_Kız = new System.Windows.Forms.RadioButton();
             this.rbtn_Erkek = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_No = new System.Windows.Forms.TextBox();
+            this.txt_Adi = new System.Windows.Forms.TextBox();
+            this.txt_Soyad = new System.Windows.Forms.TextBox();
+            this.txt_DogumTarihi = new System.Windows.Forms.TextBox();
+            this.txt_Sinif = new System.Windows.Forms.TextBox();
+            this.txt_Puan = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Ekle = new System.Windows.Forms.Button();
             this.btn_Sil = new System.Windows.Forms.Button();
@@ -132,6 +132,7 @@ namespace OgrenciIslemleri
             this.rbtn_Kız.TabStop = true;
             this.rbtn_Kız.Text = "Kız";
             this.rbtn_Kız.UseVisualStyleBackColor = true;
+            this.rbtn_Kız.CheckedChanged += new System.EventHandler(this.rbtn_Kız_CheckedChanged);
             // 
             // rbtn_Erkek
             // 
@@ -144,54 +145,56 @@ namespace OgrenciIslemleri
             this.rbtn_Erkek.TabStop = true;
             this.rbtn_Erkek.Text = "Erkek";
             this.rbtn_Erkek.UseVisualStyleBackColor = true;
+            this.rbtn_Erkek.CheckedChanged += new System.EventHandler(this.rbtn_Erkek_CheckedChanged);
             // 
-            // textBox1
+            // txt_No
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(247, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 30);
-            this.textBox1.TabIndex = 9;
+            this.txt_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_No.Location = new System.Drawing.Point(247, 31);
+            this.txt_No.Name = "txt_No";
+            this.txt_No.ReadOnly = true;
+            this.txt_No.Size = new System.Drawing.Size(203, 30);
+            this.txt_No.TabIndex = 9;
             // 
-            // textBox2
+            // txt_Adi
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(247, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 30);
-            this.textBox2.TabIndex = 10;
+            this.txt_Adi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_Adi.Location = new System.Drawing.Point(247, 74);
+            this.txt_Adi.Name = "txt_Adi";
+            this.txt_Adi.Size = new System.Drawing.Size(203, 30);
+            this.txt_Adi.TabIndex = 10;
             // 
-            // textBox3
+            // txt_Soyad
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(247, 113);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 30);
-            this.textBox3.TabIndex = 11;
+            this.txt_Soyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_Soyad.Location = new System.Drawing.Point(247, 113);
+            this.txt_Soyad.Name = "txt_Soyad";
+            this.txt_Soyad.Size = new System.Drawing.Size(203, 30);
+            this.txt_Soyad.TabIndex = 11;
             // 
-            // textBox4
+            // txt_DogumTarihi
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(247, 184);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 30);
-            this.textBox4.TabIndex = 12;
+            this.txt_DogumTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_DogumTarihi.Location = new System.Drawing.Point(247, 184);
+            this.txt_DogumTarihi.Name = "txt_DogumTarihi";
+            this.txt_DogumTarihi.Size = new System.Drawing.Size(203, 30);
+            this.txt_DogumTarihi.TabIndex = 12;
             // 
-            // textBox5
+            // txt_Sinif
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.Location = new System.Drawing.Point(247, 229);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 30);
-            this.textBox5.TabIndex = 13;
+            this.txt_Sinif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_Sinif.Location = new System.Drawing.Point(247, 229);
+            this.txt_Sinif.Name = "txt_Sinif";
+            this.txt_Sinif.Size = new System.Drawing.Size(203, 30);
+            this.txt_Sinif.TabIndex = 13;
             // 
-            // textBox6
+            // txt_Puan
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox6.Location = new System.Drawing.Point(247, 268);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 30);
-            this.textBox6.TabIndex = 14;
+            this.txt_Puan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_Puan.Location = new System.Drawing.Point(247, 268);
+            this.txt_Puan.Name = "txt_Puan";
+            this.txt_Puan.Size = new System.Drawing.Size(203, 30);
+            this.txt_Puan.TabIndex = 14;
             // 
             // dataGridView1
             // 
@@ -202,6 +205,7 @@ namespace OgrenciIslemleri
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1005, 250);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btn_Ekle
             // 
@@ -223,6 +227,7 @@ namespace OgrenciIslemleri
             this.btn_Sil.TabIndex = 17;
             this.btn_Sil.Text = "SİL";
             this.btn_Sil.UseVisualStyleBackColor = true;
+            this.btn_Sil.Click += new System.EventHandler(this.btn_Sil_Click);
             // 
             // btn_Guncelle
             // 
@@ -233,6 +238,7 @@ namespace OgrenciIslemleri
             this.btn_Guncelle.TabIndex = 18;
             this.btn_Guncelle.Text = "GÜNCELLE";
             this.btn_Guncelle.UseVisualStyleBackColor = true;
+            this.btn_Guncelle.Click += new System.EventHandler(this.btn_Guncelle_Click);
             // 
             // Form1
             // 
@@ -243,12 +249,12 @@ namespace OgrenciIslemleri
             this.Controls.Add(this.btn_Sil);
             this.Controls.Add(this.btn_Ekle);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Puan);
+            this.Controls.Add(this.txt_Sinif);
+            this.Controls.Add(this.txt_DogumTarihi);
+            this.Controls.Add(this.txt_Soyad);
+            this.Controls.Add(this.txt_Adi);
+            this.Controls.Add(this.txt_No);
             this.Controls.Add(this.rbtn_Erkek);
             this.Controls.Add(this.rbtn_Kız);
             this.Controls.Add(this.label7);
@@ -280,12 +286,12 @@ namespace OgrenciIslemleri
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton rbtn_Kız;
         private System.Windows.Forms.RadioButton rbtn_Erkek;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_No;
+        private System.Windows.Forms.TextBox txt_Adi;
+        private System.Windows.Forms.TextBox txt_Soyad;
+        private System.Windows.Forms.TextBox txt_DogumTarihi;
+        private System.Windows.Forms.TextBox txt_Sinif;
+        private System.Windows.Forms.TextBox txt_Puan;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Ekle;
         private System.Windows.Forms.Button btn_Sil;
